@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ap57-frontend": {
+    "aq54-frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ap57-frontend",
+            "outputPath": "dist/aq54-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ap57-frontend:build:production"
+              "buildTarget": "aq54-frontend:build:production"
             },
             "development": {
-              "buildTarget": "ap57-frontend:build:development"
+              "buildTarget": "aq54-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "ap57-frontend:build"
+            "buildTarget": "aq54-frontend:build"
           }
         },
         "test": {
@@ -98,6 +98,6 @@
     }
   },
   "cli": {
-    "analytics": "d279c25a-6eeb-4ee9-ac56-31d768f47adf"
+    "analytics": "84c6726f-6516-4da1-a242-89c305646599"
   }
 }
