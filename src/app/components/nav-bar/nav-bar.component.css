@@ -1,0 +1,35 @@
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    background-color: #ff00f7;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 70%;
+    margin: auto;
+    border-radius: 50px;
+  }
+  
+  .nav-bar__menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-bar__menu-item {
+    margin: 0 10px;
+  }
+  
+  .nav-bar__menu-item a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    background-color: #007BFF;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-bar__menu-item a:hover {
+    background-color: #0056b3;
+  }
