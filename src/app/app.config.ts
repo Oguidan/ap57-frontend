@@ -4,6 +4,8 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 
+import { TableComponent } from './components/table/table.component';
+
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideClientHydration()]
 };
