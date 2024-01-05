@@ -1,41 +1,17 @@
+<!-- app.component.html -->
 <table class="custom-table">
   <thead>
     <tr>
-      <th>Sensors</th>
+      <th>Sensor</th>
       <th>SMART188</th>
       <th>SMART189</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>extT</td>
-      <td>0°C</td>
-      <td>0°C</td>
+    <tr *ngFor="let sensorData of mergedData">
+      <td>{{ sensorData.sensor }}</td>
+      <td>{{ sensorData.value1 }} {{ sensorData.unit1 }}</td>
+      <td>{{ sensorData.value2 }} {{ sensorData.unit2 }}</td>
     </tr>
-    <tr>
-      <td>rh</td>
-      <td>0%</td>
-      <td>0%</td>
-    </tr>
-    <tr>
-        <td>o3</td>
-        <td>0µg/m³</td>
-        <td>0µg/m³</td>
-      </tr>
-      <tr>
-        <td>no2</td>
-        <td>0µg/m³</td>
-        <td>0µg/m³</td>
-      </tr>
-      <tr>
-        <td>pm25</td>
-        <td>0µg/m³</td>
-        <td>0µg/m³</td>
-      </tr>
-      <tr>
-        <td>pm10</td>
-        <td>0µg/m³</td>
-        <td>0µg/m³</td>
-      </tr>
   </tbody>
 </table>
