@@ -16,7 +16,7 @@ export class DataService {
   }
   
   getHistoricalValues(stationName: string, dt_from_string: string, dt_to_string: string): Observable<any> {
-    const apiUrl = `${this.backendUrl}/api/getHistoricalValues/${stationName}/${dt_from_string}/${dt_to_string}`;
+    const apiUrl = `${this.backendUrl}/api/getHourlyAvg/${stationName}/${dt_from_string}/${dt_to_string}`;
     return this.http.get(apiUrl);
   }
 }
