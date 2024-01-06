@@ -1,0 +1,17 @@
+<table class="custom-table">
+    <thead>
+      <tr>
+        <th>Column1</th>
+        <th>Column2</th>
+        <!-- Add more headers based on your CSV columns -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of csvData">
+        <td>{{ row.column1 }}</td>
+        <td>{{ row.column2 }}</td>
+        <!-- Add more columns based on your CSV columns -->
+      </tr>
+    </tbody>
+  </table>
+  

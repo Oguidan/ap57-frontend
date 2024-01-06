@@ -22,14 +22,24 @@ export class TableComponent {
     this.dataService.getCurrentValues(stationName1).subscribe((data) => {
       this.airqinoData1 = data;
       console.log(data);
+  
+      if (this.airqinoData2) {
+        this.mergeData();
+      }
     });
-
+  
     const stationName2 = 'SMART189';
     this.dataService.getCurrentValues(stationName2).subscribe((data) => {
       this.airqinoData2 = data;
       console.log(data);
+  
+      if (this.airqinoData1) {
+        this.mergeData();
+      }
     });
-
+  }
+  
+  mergeData(): void {
     this.mergedData = this.airqinoData1.values.map((item1: any) => {
       const item2 = this.airqinoData2.values.find(
         (item: any) => item.sensor === item1.sensor
