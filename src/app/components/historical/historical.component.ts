@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import csvParser from 'csv-parser';
 import { DataService } from '../../services/data.service';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-historical',
   standalone: true,
-  imports: [],
+  imports: [NgFor],
   templateUrl: './historical.component.html',
   styleUrl: './historical.component.css'
 })
@@ -21,32 +22,25 @@ export class HistoricalComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.dataService.getHistoricalValues(this.station_name, this.dt_from_string, this.dt_to_string).subscribe(
-      (csvText: string) => {
-        this.csvData = this.parseCSV(csvText);
+    this.dataService.getHourlyAvg(this.station_name, this.dt_from_string, this.dt_to_string).subscribe(
+      (data) => {
+        this.csvData = data.map((item: any) => {
+          const key = Object.keys(item)[0];
+          const value = item[key];
+
+          const columns = key.split(';');
+          const values = value.split(';');
+
+          return columns.reduce((obj: any, column: string, i: number) => {
+            obj[column] = values[i];
+            return obj;
+          }, {});
+        });
       },
       error => {
-        console.error('Error fetching CSV data:', error);
+        console.error('Error fetching data:', error);
       }
     );
   }
-
-  private parseCSV(csvText: string): any[] {
-    const parsedData: any[] = [];
-
-    // Use csv-parser to parse the CSV data
-    csvParser({ headers: true })
-      .on('data', (row: any) => {
-        parsedData.push(row);
-      })
-      .on('end', () => {
-        console.log('CSV parsing complete:', parsedData);
-      });
-
-    // Feed the CSV text to the parser
-    const readableStream = require('stream').Readable.from([csvText]);
-    readableStream.pipe(csvParser());
-
-    return parsedData;
-  }
+                    
 }
