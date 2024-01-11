@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private backendUrl = 'http://localhost:8080';  // Replace with your Golang backend URL
+  private backendUrl = 'http://44.201.227.0:1000';  // Replace with your Golang backend URL
 
   constructor(private http: HttpClient) { }
 
