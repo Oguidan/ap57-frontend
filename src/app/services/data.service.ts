@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private backendUrl = 'http://44.201.227.0:1000';  // Replace with your Golang backend URL
+  private backendUrl = 'http://localhost:8080';  // Replace with Golang backend URL
 
   constructor(private http: HttpClient) { }
 
@@ -18,5 +18,10 @@ export class DataService {
   getHourlyAvg(stationName: string, dt_from_string: string, dt_to_string: string): Observable<any> {
     const apiUrl = `${this.backendUrl}/api/getHourlyAvg/${stationName}/${dt_from_string}/${dt_to_string}`;
     return this.http.get(apiUrl);
+  }
+
+  getRange(stationName: string, dt_from_string: string, dt_to_string: string): Observable<any> {
+    const apiUrl = `${this.backendUrl}/api/getRange/${stationName}/${dt_from_string}/${dt_to_string}`;
+    return this.http.get(apiUrl)
   }
 }
