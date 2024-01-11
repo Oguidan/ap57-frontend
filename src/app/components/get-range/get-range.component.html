@@ -6,44 +6,57 @@
     </tr>
     <tr>
       <th>AUX1</th>
-      <th>AUX1_INPUT</th>
       <th>AUX2</th>
-      <th>AUX2_INPUT</th>
       <th>AUX3</th>
-      <th>co</th>
-      <th>extT</th>
-      <th>intT</th>
-      <th>lat</th>
-      <th>lon</th>
-      <th>no2</th>
-      <th>o3</th>
-      <th>pm10</th>
-      <th>pm25</th>
-      <th>rh</th>
-      <th>Time</th>
+      <th>Co</th>
+      <th>Co2</th>
+      <th>No2</th>
+      <th>O3</th>
+      <th>PM10</th>
+      <th>PM2.5</th>
+      <th>RH</th>
+      <th>T</th>
+      <th>Temp. int.</th>
+      <th>VOC</th>
+      <th>Lat</th>
+      <th>Lon</th>
+      <th>Times</th>
       <th>AUX1</th>
-      <th>AUX1_INPUT</th>
       <th>AUX2</th>
-      <th>AUX2_INPUT</th>
       <th>AUX3</th>
-      <th>co</th>
-      <th>extT</th>
-      <th>intT</th>
-      <th>lat</th>
-      <th>lon</th>
-      <th>no2</th>
-      <th>o3</th>
-      <th>pm10</th>
-      <th>pm25</th>
-      <th>rh</th>
-      <th>Time</th>
+      <th>Co</th>
+      <th>Co2</th>
+      <th>No2</th>
+      <th>O3</th>
+      <th>PM10</th>
+      <th>PM2.5</th>
+      <th>RH</th>
+      <th>T</th>
+      <th>Temp. int.</th>
+      <th>VOC</th>
+      <th>Lat</th>
+      <th>Lon</th>
+      <th>Times</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let row of csvData">
-      <td>{{ row.bucket_start_timestamp }}</td>
-      <td>{{ row.co }}</td>
-      <td>{{ row.extT }}</td>
+    <tr *ngFor="let row of RangeData.raw_data">
+      <td>{{ row.AUX1 }}</td>
+      <td>{{ row.AUX2 }}</td>
+      <td>{{ row.AUX3 }}</td>
+      <td>{{ row.CO }}</td>
+      <td>{{ row.CO2 }}</td>
+      <td>{{ row.NO2 }}</td>
+      <td>{{ row.O3 }}</td>
+      <td>{{ row.PM10 }}</td>
+      <td>{{ row.PM25 }}</td>
+      <td>{{ row.RH }}</td>
+      <td>{{ row.T }}</td>
+      <td>{{ row.TempInt }}</td>
+      <td>{{ row.VOC }}</td>
+      <td>{{ row.lat }}</td>
+      <td>{{ row.lon }}</td>
+      <td>{{ row.utc_timestamp }}</td>
     </tr>
   </tbody>
 </table>
