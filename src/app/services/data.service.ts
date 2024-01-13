@@ -24,4 +24,9 @@ export class DataService {
     const apiUrl = `${this.backendUrl}/api/getRange/${stationName}/${dt_from_string}/${dt_to_string}`;
     return this.http.get(apiUrl)
   }
+
+  getSessionInfo(projectName: string) {
+    const apiURL = `${this.backendUrl}/api/getSessionInfo/${projectName}`;
+    return this.http.get(apiURL);
+  }
 }
