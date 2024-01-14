@@ -22,7 +22,7 @@ export class DataService {
 
   getRange(stationName: string, dt_from_string: string, dt_to_string: string): Observable<any> {
     const apiUrl = `${this.backendUrl}/api/getRange/${stationName}/${dt_from_string}/${dt_to_string}`;
-    return this.http.get(apiUrl)
+    return this.http.get(apiUrl);
   }
 
   getSessionInfo(projectName: string) {
@@ -32,6 +32,11 @@ export class DataService {
 
   getSingleDay(stationName: string, dt_from_string: string): Observable<any> {
     const apiURL = `${this.backendUrl}/api/getSingleDay/${stationName}/${dt_from_string}`;
-    return this.http.get(apiURL)
+    return this.http.get(apiURL);
+  }
+
+  getStations(projectName: string): Observable<any> {
+    const apiURL = `${this.backendUrl}/api/getStations/${projectName}`;
+    return this.http.get(apiURL);
   }
 }
