@@ -1,1 +1,20 @@
-<p>session-info works!</p>
+<table *ngIf="airquinoData && airquinoData.length">
+    <tr>
+      <th>Description</th>
+      <th>Session ID</th>
+      <th>Station</th>
+      <th>Sensors</th>
+    </tr>
+    <tr *ngFor="let item of airquinoData">
+      <td>{{item.description}}</td>
+      <td>{{item.sessiond_id}}</td>
+      <td>{{item.station}}</td>
+      <td>
+        <ul>
+          <li *ngFor="let sensor of item.integrated_sensors">
+            {{sensor.type}} ({{sensor.unit || 'N/A'}})
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
