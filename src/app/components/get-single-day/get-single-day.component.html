@@ -1,1 +1,34 @@
-<p>get-single-day works!</p>
+<table *ngIf="airquinoData && airquinoData.raw_data">
+    <tr>
+      <th>AUX1</th>
+      <th>AUX2</th>
+      <th>AUX3</th>
+      <th>CO</th>
+      <th>ExtT</th>
+      <th>IntT</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>NO2</th>
+      <th>O3</th>
+      <th>PM10</th>
+      <th>PM25</th>
+      <th>RH</th>
+      <th>Timestamp</th>
+    </tr>
+    <tr *ngFor="let item of airquinoData.raw_data">
+      <td>{{item.AUX1}}</td>
+      <td>{{item.AUX2}}</td>
+      <td>{{item.AUX3}}</td>
+      <td>{{item.co}}</td>
+      <td>{{item.extT}}</td>
+      <td>{{item.intT}}</td>
+      <td>{{item.lat}}</td>
+      <td>{{item.lon}}</td>
+      <td>{{item.no2}}</td>
+      <td>{{item.o3}}</td>
+      <td>{{item.pm10}}</td>
+      <td>{{item.pm25}}</td>
+      <td>{{item.rh}}</td>
+      <td>{{item.utc_timestamp}}</td>
+    </tr>
+  </table>
