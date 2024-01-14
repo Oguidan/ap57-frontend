@@ -29,4 +29,9 @@ export class DataService {
     const apiURL = `${this.backendUrl}/api/getSessionInfo/${projectName}`;
     return this.http.get(apiURL);
   }
+
+  getSingleDay(stationName: string, dt_from_string: string): Observable<any> {
+    const apiURL = `${this.backendUrl}/api/getSingleDay/${stationName}/${dt_from_string}`;
+    return this.http.get(apiURL)
+  }
 }

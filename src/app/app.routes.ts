@@ -9,6 +9,6 @@ export const routes: Routes = [
     { path: 'table', component: TableComponent },
     { path: 'historical', component: HistoricalComponent },
     {path: 'getRange', component: GetRangeComponent},
-    { path: 'getSessionInfo', component: SessionInfoComponent }
+    { path: 'getSessionInfo', component: SessionInfoComponent },
     {path: 'getSingleDay', component: GetSingleDayComponent}
 ];
