@@ -6,6 +6,7 @@ import { SessionInfoComponent } from './components/session-info/session-info.com
 import { GetSingleDayComponent } from './components/get-single-day/get-single-day.component';
 import { StationsComponent } from './components/stations/stations.component';
 import { StationStatusComponent } from './components/station-status/station-status.component';
+import { StationHourlyComponent } from './components/station-hourly/station-hourly.component';
 
 export const routes: Routes = [
     { path: 'table', component: TableComponent },
@@ -14,5 +15,6 @@ export const routes: Routes = [
     { path: 'getSessionInfo', component: SessionInfoComponent },
     {path: 'getSingleDay', component: GetSingleDayComponent},
     {path: 'stations', component: StationsComponent},
-    {path: 'stationStatus', component: StationStatusComponent}
+    {path: 'stationStatus', component: StationStatusComponent},
+    {path: 'stationHourly', component: StationHourlyComponent}
 ];
