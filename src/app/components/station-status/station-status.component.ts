@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-station-status',
@@ -8,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrl: './station-status.component.css'
 })
 export class StationStatusComponent {
+  airquinoData: any;
 
+  constructor(private dataService: DataService) {}
+
+  ngOnInit(): void{
+    const projectId = "283164601";
+    this.dataService.getStationStatus(projectId).subscribe((data) => {
+      this.airquinoData = data
+    })
+  }
 }
