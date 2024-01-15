@@ -39,4 +39,9 @@ export class DataService {
     const apiURL = `${this.backendUrl}/api/getStations/${projectName}`;
     return this.http.get(apiURL);
   }
+
+  getStationStatus(projectId: string): Observable<any> {
+    const apiURL = `${this.backendUrl}/api/getStationStatus/${projectId}`;
+    return this.http.get(apiURL);
+  }
 }
