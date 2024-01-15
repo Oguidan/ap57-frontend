@@ -1,1 +1,27 @@
-<p>station-hourly works!</p>
+<h2>{{airquinoData.header.station_name}}</h2>
+<p>Latitude: {{airquinoData.header.station_lat}}, Longitude: {{airquinoData.header.station_lon}}</p>
+
+<table>
+  <tr>
+    <th>CO</th>
+    <th>NO2</th>
+    <th>O3</th>
+    <th>PM10</th>
+    <th>PM2.5</th>
+    <th>RH</th>
+    <th>T</th>
+    <th>T. int.</th>
+    <th>Timestamp</th>
+  </tr>
+  <tr *ngFor="let item of airquinoData.data">
+    <td>{{item.CO}}</td>
+    <td>{{item.NO2}}</td>
+    <td>{{item.O3}}</td>
+    <td>{{item.PM10}}</td>
+    <td>{{item['PM2.5']}}</td>
+    <td>{{item.RH}}</td>
+    <td>{{item.T}}</td>
+    <td>{{item['T. int.']}}</td>
+    <td>{{item.timestamp}}</td>
+  </tr>
+</table>
