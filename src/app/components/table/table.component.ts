@@ -21,17 +21,11 @@ export class TableComponent {
     const stationName1 = 'SMART188';
     this.dataService.getCurrentValues(stationName1).subscribe((data) => {
       this.airqinoData1 = data;
-      console.log(data);
-  
-      if (this.airqinoData2) {
-        this.mergeData();
-      }
     });
   
     const stationName2 = 'SMART189';
     this.dataService.getCurrentValues(stationName2).subscribe((data) => {
       this.airqinoData2 = data;
-      console.log(data);
   
       if (this.airqinoData1) {
         this.mergeData();

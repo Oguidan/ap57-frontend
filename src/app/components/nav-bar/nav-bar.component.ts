@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { TableComponent } from '../table/table.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,5 +10,4 @@ import { RouterModule } from '@angular/router';
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent {
-
 }
