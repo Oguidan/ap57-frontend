@@ -5,6 +5,7 @@ import { GetRangeComponent } from './components/get-range/get-range.component';
 import { SessionInfoComponent } from './components/session-info/session-info.component';
 import { GetSingleDayComponent } from './components/get-single-day/get-single-day.component';
 import { StationsComponent } from './components/stations/stations.component';
+import { StationStatusComponent } from './components/station-status/station-status.component';
 
 export const routes: Routes = [
     { path: 'table', component: TableComponent },
@@ -12,5 +13,6 @@ export const routes: Routes = [
     {path: 'getRange', component: GetRangeComponent},
     { path: 'getSessionInfo', component: SessionInfoComponent },
     {path: 'getSingleDay', component: GetSingleDayComponent},
-    {path: 'stations', component: StationsComponent}
+    {path: 'stations', component: StationsComponent},
+    {path: 'stationStatus', component: StationStatusComponent}
 ];
