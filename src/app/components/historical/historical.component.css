@@ -54,3 +54,31 @@
   .button:hover {
     background-color: #0056b3;
   }
+
+  #first {
+    width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid blue;
+    border-radius: 4px;
+    margin-top: 1%;
+    margin-left: 10%;
+  }
+
+  #second {
+    width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid blue;
+    border-radius: 4px;
+    margin-top: 1%;
+    margin-left: 10%;
+    right: -12%;
+    position: relative;    
+  }
+  
+  input:focus {
+    border-color: green;
+  }

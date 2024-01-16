@@ -3,19 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "aq54_fontend": {
+    "aq54-frontend": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "standalone": false
-        },
-        "@schematics/angular:directive": {
-          "standalone": false
-        },
-        "@schematics/angular:pipe": {
-          "standalone": false
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -23,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/aq54_fontend",
+            "outputPath": "dist/aq54-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -72,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "aq54_fontend:build:production"
+              "buildTarget": "aq54-frontend:build:production"
             },
             "development": {
-              "buildTarget": "aq54_fontend:build:development"
+              "buildTarget": "aq54-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "aq54_fontend:build"
+            "buildTarget": "aq54-frontend:build"
           }
         },
         "test": {
@@ -108,6 +98,6 @@
     }
   },
   "cli": {
-    "analytics": "2ed9437c-217b-444f-b075-f5b1511d3265"
+    "analytics": "84c6726f-6516-4da1-a242-89c305646599"
   }
 }

@@ -5,10 +5,10 @@ import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
 
 @Component({
     selector: 'app-root',
-    // standalone: true,
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    // imports: [CommonModule, RouterOutlet, NavBarComponent]
+    imports: [CommonModule, RouterOutlet, NavBarComponent]
 })
 export class AppComponent {
   title = 'AQ54';

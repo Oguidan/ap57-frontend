@@ -1,39 +1,26 @@
-import { Component, NgModule, OnInit } from '@angular/core';
-import csvParser from 'csv-parser';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { NgFor } from '@angular/common';
-import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-historical',
-  standalone: false,
-  // imports: [NgFor, ReactiveFormsModule],
   templateUrl: './historical.component.html',
   styleUrl: './historical.component.css',
 })
 export class HistoricalComponent implements OnInit {
-  csvData: any[] = [];
+  csvData1: any[] = [];
+  csvData2: any[] = [];
 
-  station_name = 'SMART188';
-  // checkoutForm = this.formBuilder.group({
-    // name: '',
-    // // address: ''
-  // });
-  // name = new FormControl('');
-  // dt_from_string = this.checkoutForm.value.name;
-  dt_from_string: any;
-  dt_to_string = '';
+  mergedData: any;
 
-  // onKey1(value: string) {
-  // this.dt_from_string = value;
-  // }
+  station1_name = 'SMART188';
+  dt1_from_string: string = '';
+  dt1_to_string: string = '';
 
-  onKey2(value: string) {
-    this.dt_to_string = value;
-    console.log(this.dt_from_string);
-  }
+  station2_name = 'SMART189';
+  dt2_from_string: string = '';
+  dt2_to_string: string = '';
 
-  constructor(private dataService: DataService, private formBuilder: FormBuilder,) {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.fetchData();
@@ -41,24 +28,51 @@ export class HistoricalComponent implements OnInit {
 
   fetchData() {
     this.dataService
-  .getHourlyAvg(this.station_name, this.dt_from_string, this.dt_to_string)
-  .subscribe(
-    (data) => {
-      this.csvData = data.map((item: any) => {
-        const key = Object.keys(item)[0];
-        const value = item[key];
-        const columns = key.split(';');
-        const values = value.split(';');
-        return columns.reduce((obj: any, column: string, i: number) => {
-          obj[column] = values[i];
-          return obj;
-        }, {});
-      });
-    },
-    error => {
-      console.error('Error fetching data:', error);
-    }
-  );
+      .getHourlyAvg(
+        this.station1_name,
+        this.dt1_from_string,
+        this.dt1_to_string
+      )
+      .subscribe(
+        (data: any[]) => {
+          this.csvData1 = data.map((item: any) => {
+            const key = Object.keys(item)[0];
+            const value = item[key];
+            const columns = key.split(';');
+            const values = value.split(';');
+            return columns.reduce((obj: any, column: string, i: number) => {
+              obj[column] = values[i];
+              return obj;
+            }, {});
+          });
+        },
+        (error: any) => {
+          console.error('Error fetching data:', error);
+        }
+      );
+    this.dataService
+      .getHourlyAvg(
+        this.station2_name,
+        this.dt2_from_string,
+        this.dt2_to_string
+      )
+      .subscribe(
+        (data: any[]) => {
+          this.csvData2 = data.map((item: any) => {
+            const key = Object.keys(item)[0];
+            const value = item[key];
+            const columns = key.split(';');
+            const values = value.split(';');
+            return columns.reduce((obj: any, column: string, i: number) => {
+              obj[column] = values[i];
+              return obj;
+            }, {});
+          });
+        },
+        (error: any) => {
+          console.error('Error fetching data:', error);
+        }
+      );
   }
 
   refresh() {

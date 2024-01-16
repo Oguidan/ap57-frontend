@@ -1,21 +1,36 @@
-// app.module.ts
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';  // Import CommonModule
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
-import { DataService } from './services/data.service';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { RouterOutlet } from '@angular/router';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { CommonModule } from '@angular/common';
+import { CurrentComponent } from './components/current/current.component';
+import { HttpClientModule } from '@angular/common/http';
 import { HistoricalComponent } from './components/historical/historical.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { GetRangeComponent } from './components/get-range/get-range.component';
 
 @NgModule({
-  declarations: [HistoricalComponent],
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+    CurrentComponent,
+    HistoricalComponent,
+    GetRangeComponent
+  ],
   imports: [
     BrowserModule,
-    CommonModule,  // Add CommonModule to the imports array
-    FormsModule,
-    HttpClientModule
+    AppRoutingModule,
+    RouterOutlet,
+    CommonModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [DataService],
+  providers: [
+    provideClientHydration()
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,14 +1,10 @@
-<!-- <input #box (keyup.enter)="onKey1(box.value)" (blur)="onKey1(box.value)"> -->
-<!-- <form [formGroup]="checkoutForm" (ngSubmit)="ngOnInit()"> -->
-  <!-- <label for="name">Name: </label> -->
-  <!-- <input id="name" type="text" formControlName="name"> -->
-  <!-- <button class="button" type="submit">Submit</button> -->
-<!-- </form> -->
+<input type="text" [(ngModel)]="dt1_from_string" placeholder="YYYY-MM-DD (Start Date)" id="first">
+<input type="text" [(ngModel)]="dt1_to_string" placeholder="YYYY-MM-DD (End Date)" id="first">
 
-<input type="date" #box (keyup.enter)="onKey2(box.value)" (keyup.enter)="onKey2(box.value)">
-<!-- <input type="date" [(ngModel)]="dt_from_string" /> -->
+<input type="text" [(ngModel)]="dt2_from_string" placeholder="YYYY-MM-DD (Start Date)" id="second">
+<input type="text" [(ngModel)]="dt2_to_string" placeholder="YYYY-MM-DD (End Date)" id="second">
 
-<button class="button" (click)="refresh()">Refresh</button>
+<button class="button" (click)="fetchData()">Refresh</button>
 <table class="custom-table">
   <thead>
     <tr>
@@ -25,10 +21,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let row of csvData">
-      <td>{{ row.bucket_start_timestamp }}</td>
-      <td>{{ row.co }}</td>
-      <td>{{ row.extT }}</td>
+    <tr *ngFor="let item1 of csvData1; let i = index">
+      <td>{{ item1.bucket_start_timestamp }}</td>
+      <td>{{ item1.co }}</td>
+      <td>{{ item1.extT }}</td>
+      <td>{{ csvData2[i].bucket_start_timestamp }}</td>
+      <td>{{ csvData2[i].co }}</td>
+      <td>{{ csvData2[i].extT }}</td>
     </tr>
   </tbody>
 </table>

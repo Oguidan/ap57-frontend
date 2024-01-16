@@ -4,26 +4,34 @@ import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-get-range',
-  standalone: true,
-  imports: [NgFor],
   templateUrl: './get-range.component.html',
-  styleUrl: './get-range.component.css'
+  styleUrl: './get-range.component.css',
 })
 export class GetRangeComponent {
-  RangeData: any;
+  RangeData1: any;
+  RangeData2: any;
 
-  station_name = "SMART188";
-  dt_from_string = "2024-01-05";
-  dt_to_string = "2024-01-06";
+  station1_name = 'SMART188';
+  dt1_from_string: string = '';
+  dt1_to_string: string = '';
 
-  constructor(private dataService: DataService) { }
-  
+  station2_name = 'SMART189';
+  dt2_from_string: string = '';
+  dt2_to_string: string = '';
+
+  constructor(private dataService: DataService) {}
+
   ngOnInit(): void {
-    this.dataService.getRange(this.station_name, this.dt_from_string, this.dt_to_string).subscribe(
-      (data) => {
-        this.RangeData = data;
-        console.log(this.RangeData);
-      }
-    )
+    this.dataService
+      .getRange(this.station1_name, this.dt1_from_string, this.dt1_to_string)
+      .subscribe((data) => {
+        this.RangeData1 = data;
+      });
+
+    this.dataService
+      .getRange(this.station2_name, this.dt2_from_string, this.dt2_to_string)
+      .subscribe((data) => {
+        this.RangeData2 = data;
+      });
   }
 }
