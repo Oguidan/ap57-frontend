@@ -1,16 +1,25 @@
+<button class="button" (click)="fetchData()">Refresh</button>
+
 <table>
-    <tr>
-      <th>Last Transmission UTC</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Station ID</th>
-      <th>Station Name</th>
-    </tr>
-    <tr>
-      <td>{{airquinoData.last_transmission_utc}}</td>
-      <td>{{airquinoData.latitude}}</td>
-      <td>{{airquinoData.longitude}}</td>
-      <td>{{airquinoData.station_id}}</td>
-      <td>{{airquinoData.station_name}}</td>
-    </tr>
-  </table>
+  <tr>
+    <th>Last Transmission UTC</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Station ID</th>
+    <th>Station Name</th>
+  </tr>
+  <tr>
+    <td>{{ airquinoData1.last_transmission_utc }}</td>
+    <td>{{ airquinoData1.latitude }}</td>
+    <td>{{ airquinoData1.longitude }}</td>
+    <td>{{ airquinoData1.station_id }}</td>
+    <td>{{ airquinoData1.station_name }}</td>
+  </tr>
+  <tr>
+    <td>{{ airquinoData2.last_transmission_utc }}</td>
+    <td>{{ airquinoData2.latitude }}</td>
+    <td>{{ airquinoData2.longitude }}</td>
+    <td>{{ airquinoData2.station_id }}</td>
+    <td>{{ airquinoData2.station_name }}</td>
+  </tr>
+</table>

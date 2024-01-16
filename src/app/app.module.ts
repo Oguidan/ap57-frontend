@@ -7,12 +7,13 @@ import { RouterOutlet } from '@angular/router';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CommonModule } from '@angular/common';
 import { CurrentComponent } from './components/current/current.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { HistoricalComponent } from './components/historical/historical.component';
 import { FormsModule } from '@angular/forms';
 import { GetRangeComponent } from './components/get-range/get-range.component';
 import { SessionInfoComponent } from './components/session-info/session-info.component';
 import { GetSingleDayComponent } from './components/get-single-day/get-single-day.component';
+import { StationStatusComponent } from './components/station-status/station-status.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GetSingleDayComponent } from './components/get-single-day/get-single-da
     HistoricalComponent,
     GetRangeComponent,
     SessionInfoComponent,
-    GetSingleDayComponent
+    GetSingleDayComponent,
+    StationStatusComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { GetSingleDayComponent } from './components/get-single-day/get-single-da
     FormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(),
   ],
   bootstrap: [AppComponent]
 })
