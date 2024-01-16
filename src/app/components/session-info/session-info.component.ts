@@ -17,8 +17,7 @@ export class SessionInfoComponent {
   ngOnInit(): void {
     const projectName = 'AQ54';
     this.dataservice.getSessionInfo(projectName).subscribe((data) => {
-      this.airquinoData = data;
-      console.log(this.airquinoData);
+      this.airquinoData = data; 
     })
   }
 }
