@@ -3,7 +3,7 @@
     width: 70%;
     border-collapse: collapse;
     animation: fadeIn 1s ease-in;
-    margin-top: 1%;
+    margin-top: 4%;
   }
   
   .custom-table th, .custom-table td {
@@ -37,4 +37,25 @@
   @keyframes fadeIn {
     0% {opacity: 0;}
     100% {opacity: 1;}
+  }
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    left: 50%;
+    margin-top: 1%;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
   }

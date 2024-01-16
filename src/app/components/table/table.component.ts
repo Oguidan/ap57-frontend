@@ -22,17 +22,17 @@ export class TableComponent {
     this.dataService.getCurrentValues(stationName1).subscribe((data) => {
       this.airqinoData1 = data;
     });
-  
+
     const stationName2 = 'SMART189';
     this.dataService.getCurrentValues(stationName2).subscribe((data) => {
       this.airqinoData2 = data;
-  
-      if (this.airqinoData1) {
-        this.mergeData();
-      }
+        if (this.airqinoData1) {
+          this.mergeData();
+        }
     });
   }
   
+
   mergeData(): void {
     this.mergedData = this.airqinoData1.values.map((item1: any) => {
       const item2 = this.airqinoData2.values.find(
@@ -46,5 +46,9 @@ export class TableComponent {
         unit2: item2 ? item2.unit : null,
       };
     });
+  }
+
+  refresh() {
+    window.location.reload();
   }
 }
