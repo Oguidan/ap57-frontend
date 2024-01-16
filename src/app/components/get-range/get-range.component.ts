@@ -22,12 +22,15 @@ export class GetRangeComponent {
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
+    this.fetchData();
+  }
+
+  fetchData() {
     this.dataService
       .getRange(this.station1_name, this.dt1_from_string, this.dt1_to_string)
       .subscribe((data) => {
         this.RangeData1 = data;
       });
-
     this.dataService
       .getRange(this.station2_name, this.dt2_from_string, this.dt2_to_string)
       .subscribe((data) => {

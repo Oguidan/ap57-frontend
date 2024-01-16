@@ -1,12 +1,34 @@
-<input type="text" [(ngModel)]="dt1_from_string" placeholder="YYYY-MM-DD (Start 
-Date)" id="first">
-<input type="text" [(ngModel)]="dt1_to_string" placeholder="YYYY-MM-DD (End 
-Date)" id="first">
+<input
+  type="text"
+  [(ngModel)]="dt1_from_string"
+  placeholder="YYYY-MM-DD (Start 
+Date)"
+  id="first"
+/>
+<input
+  type="text"
+  [(ngModel)]="dt1_to_string"
+  placeholder="YYYY-MM-DD (End 
+Date)"
+  id="first"
+/>
 
-<input type="text" [(ngModel)]="dt2_from_string" placeholder="YYYY-MM-DD (Start 
-Date)" id="second">
-<input type="text" [(ngModel)]="dt2_to_string" placeholder="YYYY-MM-DD (End 
-Date)" id="second">
+<input
+  type="text"
+  [(ngModel)]="dt2_from_string"
+  placeholder="YYYY-MM-DD (Start 
+Date)"
+  id="second"
+/>
+<input
+  type="text"
+  [(ngModel)]="dt2_to_string"
+  placeholder="YYYY-MM-DD (End 
+Date)"
+  id="second"
+/>
+
+<button class="button" (click)="fetchData()">Refresh</button>
 
 <table class="custom-table">
   <thead>
@@ -46,7 +68,7 @@ Date)" id="second">
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let row of RangeData.raw_data">
+    <tr *ngFor="let row of RangeData1.raw_data; let i = index">
       <td>{{ row.AUX1 }}</td>
       <td>{{ row.AUX2 }}</td>
       <td>{{ row.AUX3 }}</td>
@@ -61,6 +83,20 @@ Date)" id="second">
       <td>{{ row.PM25 }}</td>
       <td>{{ row.RH }}</td>
       <td>{{ row.utc_timestamp }}</td>
+      <td>{{ RangeData2.raw_data[i].AUX1 }}</td>
+      <td>{{ RangeData2.raw_data[i].AUX2 }}</td>
+      <td>{{ RangeData2.raw_data[i].AUX3 }}</td>
+      <td>{{ RangeData2.raw_data[i].CO }}</td>
+      <td>{{ RangeData2.raw_data[i].extT }}</td>
+      <td>{{ RangeData2.raw_data[i].intT }}</td>
+      <td>{{ RangeData2.raw_data[i].lat }}</td>
+      <td>{{ RangeData2.raw_data[i].lon }}</td>
+      <td>{{ RangeData2.raw_data[i].NO2 }}</td>
+      <td>{{ RangeData2.raw_data[i].O3 }}</td>
+      <td>{{ RangeData2.raw_data[i].PM10 }}</td>
+      <td>{{ RangeData2.raw_data[i].PM25 }}</td>
+      <td>{{ RangeData2.raw_data[i].RH }}</td>
+      <td>{{ RangeData2.raw_data[i].utc_timestamp }}</td>
     </tr>
   </tbody>
 </table>
