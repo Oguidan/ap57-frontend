@@ -12,6 +12,7 @@ import { HistoricalComponent } from './components/historical/historical.componen
 import { FormsModule } from '@angular/forms';
 import { GetRangeComponent } from './components/get-range/get-range.component';
 import { SessionInfoComponent } from './components/session-info/session-info.component';
+import { GetSingleDayComponent } from './components/get-single-day/get-single-day.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SessionInfoComponent } from './components/session-info/session-info.com
     CurrentComponent,
     HistoricalComponent,
     GetRangeComponent,
-    SessionInfoComponent
+    SessionInfoComponent,
+    GetSingleDayComponent
   ],
   imports: [
     BrowserModule,

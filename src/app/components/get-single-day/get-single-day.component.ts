@@ -1,24 +1,37 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-get-single-day',
-  standalone: true,
-  imports: [NgIf, NgFor],
   templateUrl: './get-single-day.component.html',
-  styleUrl: './get-single-day.component.css'
+  styleUrl: './get-single-day.component.css',
 })
 export class GetSingleDayComponent {
-  airquinoData: any;
+  airquinoData1: any;
+  airquinoData2: any;
+
+  station1Name = 'SMART188';
+  station2Name = 'SMART189';
+  dt1_from_string: string = '';
+  dt2_from_string: string = '';
 
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    const stationName = 'SMART188';
-    const dtFromString = '2024-01-14'
-    this.dataService.getSingleDay(stationName, dtFromString).subscribe((data) => {
-      this.airquinoData = data;
-    })
+    this.fetchData();
+  }
+
+  fetchData() {
+    this.dataService
+      .getSingleDay(this.station1Name, this.dt1_from_string)
+      .subscribe((data) => {
+        this.airquinoData1 = data;
+      });
+
+    this.dataService
+      .getSingleDay(this.station2Name, this.dt2_from_string)
+      .subscribe((data) => {
+        this.airquinoData2 = data;
+      });
   }
 }

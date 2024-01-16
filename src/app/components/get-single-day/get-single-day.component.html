@@ -1,34 +1,82 @@
-<table *ngIf="airquinoData && airquinoData.raw_data">
-    <tr>
-      <th>AUX1</th>
-      <th>AUX2</th>
-      <th>AUX3</th>
-      <th>CO</th>
-      <th>ExtT</th>
-      <th>IntT</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>NO2</th>
-      <th>O3</th>
-      <th>PM10</th>
-      <th>PM25</th>
-      <th>RH</th>
-      <th>Timestamp</th>
-    </tr>
-    <tr *ngFor="let item of airquinoData.raw_data">
-      <td>{{item.AUX1}}</td>
-      <td>{{item.AUX2}}</td>
-      <td>{{item.AUX3}}</td>
-      <td>{{item.co}}</td>
-      <td>{{item.extT}}</td>
-      <td>{{item.intT}}</td>
-      <td>{{item.lat}}</td>
-      <td>{{item.lon}}</td>
-      <td>{{item.no2}}</td>
-      <td>{{item.o3}}</td>
-      <td>{{item.pm10}}</td>
-      <td>{{item.pm25}}</td>
-      <td>{{item.rh}}</td>
-      <td>{{item.utc_timestamp}}</td>
-    </tr>
-  </table>
+<input
+  type="text"
+  [(ngModel)]="dt1_from_string"
+  placeholder="YYYY-MM-DD (Date)"
+  id="first"
+/>
+
+<input
+  type="text"
+  [(ngModel)]="dt2_from_string"
+  placeholder="YYYY-MM-DD (Date)"
+  id="second"
+/>
+
+<button class="button" (click)="fetchData()">Refresh</button>
+
+<table>
+  <tr>
+    <th colspan="14">SMART188</th>
+    <th colspan="14">SMART189</th>
+  </tr>
+  <tr>
+    <th>AUX1</th>
+    <th>AUX2</th>
+    <th>AUX3</th>
+    <th>CO</th>
+    <th>ExtT</th>
+    <th>IntT</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>NO2</th>
+    <th>O3</th>
+    <th>PM10</th>
+    <th>PM25</th>
+    <th>RH</th>
+    <th>Timestamp</th>
+    <th>AUX1</th>
+    <th>AUX2</th>
+    <th>AUX3</th>
+    <th>CO</th>
+    <th>ExtT</th>
+    <th>IntT</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>NO2</th>
+    <th>O3</th>
+    <th>PM10</th>
+    <th>PM25</th>
+    <th>RH</th>
+    <th>Timestamp</th>
+  </tr>
+  <tr *ngFor="let item of airquinoData1.raw_data; let i = index">
+    <td>{{ item.AUX1 }}</td>
+    <td>{{ item.AUX2 }}</td>
+    <td>{{ item.AUX3 }}</td>
+    <td>{{ item.co }}</td>
+    <td>{{ item.extT }}</td>
+    <td>{{ item.intT }}</td>
+    <td>{{ item.lat }}</td>
+    <td>{{ item.lon }}</td>
+    <td>{{ item.no2 }}</td>
+    <td>{{ item.o3 }}</td>
+    <td>{{ item.pm10 }}</td>
+    <td>{{ item.pm25 }}</td>
+    <td>{{ item.rh }}</td>
+    <td>{{ item.utc_timestamp }}</td>
+    <td>{{ airquinoData2.raw_data[i].AUX1 }}</td>
+    <td>{{ airquinoData2.raw_data[i].AUX2 }}</td>
+    <td>{{ airquinoData2.raw_data[i].AUX3 }}</td>
+    <td>{{ airquinoData2.raw_data[i].co }}</td>
+    <td>{{ airquinoData2.raw_data[i].extT }}</td>
+    <td>{{ airquinoData2.raw_data[i].intT }}</td>
+    <td>{{ airquinoData2.raw_data[i].lat }}</td>
+    <td>{{ airquinoData2.raw_data[i].lon }}</td>
+    <td>{{ airquinoData2.raw_data[i].no2 }}</td>
+    <td>{{ airquinoData2.raw_data[i].o3 }}</td>
+    <td>{{ airquinoData2.raw_data[i].pm10 }}</td>
+    <td>{{ airquinoData2.raw_data[i].pm25 }}</td>
+    <td>{{ airquinoData2.raw_data[i].rh }}</td>
+    <td>{{ airquinoData2.raw_data[i].utc_timestamp }}</td>
+  </tr>
+</table>
