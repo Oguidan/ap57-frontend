@@ -1,23 +1,25 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-session-info',
-  standalone: true,
-  imports: [NgIf, NgFor],
   templateUrl: './session-info.component.html',
-  styleUrl: './session-info.component.css'
+  styleUrl: './session-info.component.css',
+  providers: [DataService],
 })
 export class SessionInfoComponent {
   airquinoData: any;
+  projectName = 'AQ54';
 
   constructor(private dataservice: DataService) {}
 
   ngOnInit(): void {
-    const projectName = 'AQ54';
-    this.dataservice.getSessionInfo(projectName).subscribe((data) => {
-      this.airquinoData = data; 
-    })
+    this.fetchData();
+  }
+
+  fetchData() {
+    this.dataservice.getSessionInfo(this.projectName).subscribe((data) => {
+      this.airquinoData = data;
+    });
   }
 }

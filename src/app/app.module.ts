@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HistoricalComponent } from './components/historical/historical.component';
 import { FormsModule } from '@angular/forms';
 import { GetRangeComponent } from './components/get-range/get-range.component';
+import { SessionInfoComponent } from './components/session-info/session-info.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { GetRangeComponent } from './components/get-range/get-range.component';
     NavBarComponent,
     CurrentComponent,
     HistoricalComponent,
-    GetRangeComponent
+    GetRangeComponent,
+    SessionInfoComponent
   ],
   imports: [
     BrowserModule,

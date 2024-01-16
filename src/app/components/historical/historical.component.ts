@@ -74,8 +74,4 @@ export class HistoricalComponent implements OnInit {
         }
       );
   }
-
-  refresh() {
-    window.location.reload();
-  }
 }
