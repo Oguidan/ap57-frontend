@@ -14,6 +14,8 @@ import { GetRangeComponent } from './components/get-range/get-range.component';
 import { SessionInfoComponent } from './components/session-info/session-info.component';
 import { GetSingleDayComponent } from './components/get-single-day/get-single-day.component';
 import { StationStatusComponent } from './components/station-status/station-status.component';
+import { StationsComponent } from './components/stations/stations.component';
+import { StationHourlyComponent } from './components/station-hourly/station-hourly.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { StationStatusComponent } from './components/station-status/station-stat
     GetRangeComponent,
     SessionInfoComponent,
     GetSingleDayComponent,
-    StationStatusComponent
+    StationStatusComponent,
+    StationsComponent,
+    StationHourlyComponent
   ],
   imports: [
     BrowserModule,

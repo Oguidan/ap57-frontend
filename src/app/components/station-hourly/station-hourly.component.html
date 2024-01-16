@@ -1,7 +1,19 @@
-<h2>{{airquinoData.header.station_name}}</h2>
-<p>Latitude: {{airquinoData.header.station_lat}}, Longitude: {{airquinoData.header.station_lon}}</p>
+<input type="text" [(ngModel)]="dt1_from_string" placeholder="YYYYMMDD-HHMM (Start 
+Date)" id="first">
+<input type="text" [(ngModel)]="dt1_to_string" placeholder="YYYYMMDD-HHMM (End 
+Date)" id="first">
 
+<button class="button" (click)="fetchData()">Refresh</button>
+
+<input type="text" [(ngModel)]="dt2_from_string" placeholder="YYYYMMDD-HHMM (Start 
+Date)" id="second">
+<input type="text" [(ngModel)]="dt2_to_string" placeholder="YYYYMMDD-HHMM (End 
+Date)" id="second">
 <table>
+  <tr>
+    <th colspan="11">SMART188</th>
+    <th colspan="11">SMART189</th>
+  </tr>
   <tr>
     <th>CO</th>
     <th>NO2</th>
@@ -12,16 +24,42 @@
     <th>T</th>
     <th>T. int.</th>
     <th>Timestamp</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>CO</th>
+    <th>NO2</th>
+    <th>O3</th>
+    <th>PM10</th>
+    <th>PM2.5</th>
+    <th>RH</th>
+    <th>T</th>
+    <th>T. int.</th>
+    <th>Timestamp</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
   </tr>
-  <tr *ngFor="let item of airquinoData.data">
-    <td>{{item.CO}}</td>
-    <td>{{item.NO2}}</td>
-    <td>{{item.O3}}</td>
-    <td>{{item.PM10}}</td>
-    <td>{{item['PM2.5']}}</td>
-    <td>{{item.RH}}</td>
-    <td>{{item.T}}</td>
-    <td>{{item['T. int.']}}</td>
-    <td>{{item.timestamp}}</td>
+  <tr *ngFor="let item of airquinoData1.data; let i = index">
+    <td>{{ airquinoData1.data[i].CO }}</td>
+    <td>{{ airquinoData1.data[i].NO2 }}</td>
+    <td>{{ airquinoData1.data[i].O3 }}</td>
+    <td>{{ airquinoData1.data[i].PM10 }}</td>
+    <td>{{ airquinoData1.data[i]["PM2.5"] }}</td>
+    <td>{{ airquinoData1.data[i].RH }}</td>
+    <td>{{ airquinoData1.data[i].T }}</td>
+    <td>{{ airquinoData1.data[i]["T. int."] }}</td>
+    <td>{{ airquinoData1.data[i].timestamp }}</td>
+    <td>{{ airquinoData1.header.station_lat }}</td>
+    <td>{{ airquinoData1.header.station_lon }}</td>
+    <td>{{ airquinoData2.data[i].CO }}</td>
+    <td>{{ airquinoData2.data[i].NO2 }}</td>
+    <td>{{ airquinoData2.data[i].O3 }}</td>
+    <td>{{ airquinoData2.data[i].PM10 }}</td>
+    <td>{{ airquinoData2.data[i]["PM2.5"] }}</td>
+    <td>{{ airquinoData2.data[i].RH }}</td>
+    <td>{{ airquinoData2.data[i].T }}</td>
+    <td>{{ airquinoData2.data[i]["T. int."] }}</td>
+    <td>{{ airquinoData2.data[i].timestamp }}</td>
+    <td>{{ airquinoData2.header.station_lat }}</td>
+    <td>{{ airquinoData2.header.station_lon }}</td>
   </tr>
 </table>
