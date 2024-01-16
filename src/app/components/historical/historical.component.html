@@ -5,7 +5,7 @@
   <!-- <button class="button" type="submit">Submit</button> -->
 <!-- </form> -->
 
-<input type="date" #box (keyup.enter)="onKey2(box.value)">
+<input type="date" #box (keyup.enter)="onKey2(box.value)" (keyup.enter)="onKey2(box.value)">
 <!-- <input type="date" [(ngModel)]="dt_from_string" /> -->
 
 <button class="button" (click)="refresh()">Refresh</button>
