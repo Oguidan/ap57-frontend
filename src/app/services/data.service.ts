@@ -16,7 +16,7 @@ export class DataService {
     return this.http.get(apiUrl);
   }
   
-  getHourlyAvg(stationName: string, dt_from_string: string, dt_to_string: string): Observable<any> {
+  getHourlyAvg(stationName: string, dt_from_string: string | null | undefined, dt_to_string: string): Observable<any> {
     const apiUrl = `${this.backendUrl}/api/getHourlyAvg/${stationName}/${dt_from_string}/${dt_to_string}`;
     return this.http.get(apiUrl);
   }

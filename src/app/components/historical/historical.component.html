@@ -1,3 +1,13 @@
+<!-- <input #box (keyup.enter)="onKey1(box.value)" (blur)="onKey1(box.value)"> -->
+<!-- <form [formGroup]="checkoutForm" (ngSubmit)="ngOnInit()"> -->
+  <!-- <label for="name">Name: </label> -->
+  <!-- <input id="name" type="text" formControlName="name"> -->
+  <!-- <button class="button" type="submit">Submit</button> -->
+<!-- </form> -->
+
+<input type="date" #box (keyup)="onKey2(box.value)">
+<!-- <input type="date" [(ngModel)]="dt_from_string" /> -->
+
 <button class="button" (click)="refresh()">Refresh</button>
 <table class="custom-table">
   <thead>
