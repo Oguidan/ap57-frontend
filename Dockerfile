@@ -1,18 +1,23 @@
-# Stage 1: Build the Angular application
-FROM node:latest as build
+# Use an official Node.js image as the base image
+FROM node:14
 
 # Add Maintainer Info
 LABEL maintainer="Michael Oguidan <michaeloguidan@gmail.com>"
 
-# Set the Current Working Directory inside the container
-WORKDIR /app
+# Set the working directory inside the container
+WORKDIR /usr/src/app
 
-COPY package.json package-lock.json ./
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+# Install dependencies
 RUN npm install
-COPY . .
-RUN npm run build --prod
 
-# Stage 2: Serve the application with Nginx
-FROM nginx:1.19.2-alpine
-COPY --from=build /app/dist/aq54_fontend /usr/share/nginx/html
-COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
+# Copy the rest of the application code
+COPY . .
+
+# Expose the port the app runs on
+EXPOSE 4200
+
+# Command to run your application
+CMD ["npm", "start"]
